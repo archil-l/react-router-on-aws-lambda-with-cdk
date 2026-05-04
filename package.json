@@ -1,8 +1,8 @@
 {
-  "name": "homepage-agent",
-  "version": "1.0.0",
-  "description": "Homepage with an AI assistant, to interact with visitors",
-  "author": "Archil Lelashvili <mail@archil.io>",
+  "name": "my-app",
+  "version": "0.1.0",
+  "description": "React Router 7 app on AWS Lambda with Claude AI assistant",
+  "author": "",
   "license": "GPL-3.0",
   "private": true,
   "sideEffects": false,
@@ -17,8 +17,8 @@
     "start": "npx @react-router/serve ./dist/server/index.js",
     "clean": "rm -rf dist node_modules",
     "cdk:build": "tsc -p cdk/tsconfig.json",
-    "cdk:deploy:streaming": "npm run release:streaming && npm run cdk:build && npx cdk deploy ask-archil-io-llm-stream-prod --require-approval never --profile agent",
-    "cdk:deploy:mcp-proxy": "npm run release:mcp-proxy && npm run cdk:build && npx cdk deploy ask-archil-io-mcp-proxy-prod --require-approval never --profile agent"
+    "cdk:deploy:streaming": "npm run release:streaming && npm run cdk:build && npx cdk deploy --require-approval never",
+    "cdk:deploy:mcp-proxy": "npm run release:mcp-proxy && npm run cdk:build && npx cdk deploy --require-approval never"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",
@@ -114,7 +114,6 @@
     "globals": "^16.3.0",
     "postcss": "^8.4.38",
     "source-map-support": "^0.5.21",
-    "streamdown": "^2.4.0",
     "tailwindcss": "^4.1.13",
     "tw-animate-css": "^1.4.0",
     "typescript": "^5.9.2",

@@ -41,24 +41,15 @@ Three Lambda functions + CloudFront:
 
 ## Getting Started
 
-1. **Configure your environment** — edit [cdk/config/environments.ts](cdk/config/environments.ts):
-   - Set `accountId` to your AWS account ID
-   - Set `region` to your preferred region
-   - Optionally set `domainName` for a custom domain
+Run the interactive setup script after cloning:
 
-2. **Set your app name and GitHub details** — edit [cdk/app.ts](cdk/app.ts):
-   - Set `APP_NAME` to your app name (used as CDK stack name prefix)
-   - Set `GITHUB_ORG` and `GITHUB_REPO` for OIDC-based GitHub Actions deployments
+```bash
+bash setup.sh
+```
 
-3. **Customize the AI assistant** — edit these files:
-   - [src/app/lib/agent/system-prompt.ts](src/app/lib/agent/system-prompt.ts) — the Claude system prompt
-   - [src/app/features/welcome/constants.ts](src/app/features/welcome/constants.ts) — welcome message and suggestion buttons
+It configures your AWS account, region, GitHub org/repo, app name, and API keys in one pass. Then follow the build & deploy steps in [SETUP.md](SETUP.md).
 
-4. **Set environment variables** on your Lambda:
-   - `ANTHROPIC_API_KEY` — your Anthropic API key
-   - `JWT_SECRET_ARN` — ARN of the secret in Secrets Manager (created by SecretsStack)
-   - `LLM_STREAM_URL` — Function URL of the Streaming Lambda (set by WebAppStack)
-   - `MCP_SERVER_URL` — (optional) URL of your MCP server
+For manual setup or CI/CD configuration, see [SETUP.md](SETUP.md).
 
 ## Key Source Paths
 
